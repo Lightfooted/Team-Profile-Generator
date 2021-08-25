@@ -63,7 +63,7 @@ const enterManager = () => {
             }
         }
     }
- ]);
+ ])
 };
 
 //Employee Section
@@ -129,6 +129,7 @@ const addEmployee = (teamData) => {
             type: 'input',
             name: 'github',
             message: 'What is the Employees GITHUB USERNAME? (Required!)',
+            when: (engineerInput) => engineerInput.role === 'Engineer',
             validate: githubInput => {
                 if (githubInput) {
                     return true;
@@ -143,6 +144,7 @@ const addEmployee = (teamData) => {
             type: 'input',
             name: 'school',
             message: 'What is the name of the Interns Educational Institution? (Required!)',
+            when: (internInput) => internInput.role === 'Intern',
             validate: schoolInput => {
                 if (schoolInput) {
                     return true;
