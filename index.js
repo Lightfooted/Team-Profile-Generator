@@ -52,7 +52,7 @@ const enterManager = () => {
     },
     {
         type: 'input',
-        name: 'number',
+        name: 'officeNumber',
         message: 'What is the Managers OFFICE NUMBER? (Required!)',
         validate: nameInput => {
             if (nameInput) {
