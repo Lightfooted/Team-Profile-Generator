@@ -1,25 +1,13 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: Verdana;
-}
-  
-h4 {
-    color: grey;
-    font-size: 18px;
-}
-  
-.email {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
+h1.text-center {
+    background-color: rgb(218, 59, 59);
     color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+}
+
+body {
+    font-family: Verdana;
+    background-color: lightgrey;
+}
+
+div.card {
+    box-shadow: 10px 10px 5px grey;
 }
