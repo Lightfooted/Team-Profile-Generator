@@ -76,6 +76,7 @@ const addEmployee = (teamData) => {
   `);
     if (!teamData.teamArr) {
         teamData.teamArr = [];
+        teamData.role = 'Manager'
     }
     return inquirer
       .prompt([
@@ -173,12 +174,14 @@ const addEmployee = (teamData) => {
   };
 
 enterManager()
-    .then(addEmployee)
+    .then(managerData => {
+        return addEmployee(managerData);
+    })
     .then(teamArr => {
-    return generatePage(teamArr);
+        return generatePage(teamArr);
     })
     .then(pageHTML => {
-    return writeFile(pageHTML);
+        return writeFile(pageHTML);
     })
     .catch(err => {
         console.log(err);
