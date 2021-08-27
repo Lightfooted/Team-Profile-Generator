@@ -1,13 +1,16 @@
 const generateManager = teamArr => {
       return `
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">${teamArr.name}</div>
                     <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                    <i class="fas fa-mug-hot fa-2x fa-fw"></i>
                     <h5 class="card-title">Manager</h5>
-                    <p class="id">ID: ${teamArr.id}</p>
-                    <p class="email">Email: ${teamArr.email}</p>
-                    <p class="officeNumber">Office Number: ${teamArr.officeNumber}</p>
+                    <li class="list-group-item bg-primary">ID: ${teamArr.id}</a>
+                    <li class="list-group-item bg-primary">Email: ${teamArr.email}</a>
+                    <li class="list-group-item bg-primary">Office Number: ${teamArr.officeNumber}</a>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -20,14 +23,17 @@ const generateEmployeeCards = employeeArr => {
             .filter(({ role }) => role === "Engineer")
             .map(({ name, id, email, github }) => {
               return `
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                         <div class="card-header">${name}</div>
                             <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                            <i class="fas fa-glasses fa-2x fa-fw"></i>
                             <h5 class="card-title">Engineer</h5>
-                            <p class="id">ID: ${id}</p>
-                            <p class="email">Email: ${email}</p>
-                            <p class="github">Github: ${github}</p>
+                            <li class="list-group-item bg-info">ID: ${id}</a>
+                            <li class="list-group-item bg-info">Email: ${email}</a>
+                            <li class="list-group-item bg-info">Github: ${github}</a>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -37,14 +43,16 @@ const generateEmployeeCards = employeeArr => {
                 .filter(({ role }) => role === "Intern")
                 .map(({ name, id, email, school }) => {
                   return `
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                             <div class="card-header">${name}</div>
                                 <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                <i class="fas fa-user-graduate fa-2x fa-fw"></i>
                                 <h5 class="card-title">Intern</h5>
-                                <p class="id">ID: ${id}</p>
-                                <p class="email">Email: ${email}</p>
-                                <p class="school">School: ${school}</p>
+                                <li class="list-group-item bg-secondary">ID: ${id}</a>
+                                <li class="list-group-item bg-secondary">Email: ${email}</a>
+                                <li class="list-group-item bg-secondary">School: ${school}</a>
                             </div>
                         </div>
                     </div>
@@ -73,9 +81,12 @@ module.exports = templateData => {
     <body>
         <header>
         <h1 class="text-center">My Team</h1>
-        <div class="row">
+        <div class="container">
+        <div class="row justify-content-center">
         ${generateManager(templateData)}
         ${generateEmployeeCards(templateData.teamArr)}
+        </div>
+        </div>
         </header>
         </div>
     </body>
