@@ -2,12 +2,7 @@ const inquirer = require('inquirer');
 const generatePage = require('./src/template');
 const writeFile = require('./src/generate-site');
 
-const Employee = require('./lib/Employee');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
-const Manager = require('./lib/Manager');
-
-//Start with Manager
+//Manager Questions
 
 const enterManager = () => {
     return inquirer.prompt([
@@ -66,7 +61,7 @@ const enterManager = () => {
  ])
 };
 
-//Employee Section
+//Adding new employees with specific role
 
 const addEmployee = (teamData) => {
     console.log(`
