@@ -2,11 +2,17 @@ const generateManager = teamArr => {
     return `
         <div class="col-sm-4">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">${teamArr.name}</div>
+                <div class="card-header font-weight-bold text-center">${teamArr.name}</div>
                     <div class="card-body">
                     <ul class="list-group list-group-flush">
-                    <i class="fas fa-mug-hot fa-2x fa-fw"></i>
-                    <h5 class="card-title">Manager</h5>
+                    <section class="row">
+                    <div class="col-sm-2">
+                        <i class="fas fa-mug-hot fa-2x fa-w"></i>
+                    </div>
+                    <div class="col-sm-10">
+                        <h5 class="card-title">Manager</h5>
+                    </div>
+                    </section>
                     <li class="list-group-item bg-primary">ID: ${teamArr.id}</a>
                     <li class="list-group-item bg-primary">Email: ${teamArr.email}</a>
                     <li class="list-group-item bg-primary">Office Number: ${teamArr.officeNumber}</a>
@@ -25,11 +31,17 @@ const generateEmployeeCards = employeeArr => {
                 return `
                 <div class="col-sm-4">
                     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                        <div class="card-header">${name}</div>
+                        <div class="card-header font-weight-bold text-center">${name}</div>
                             <div class="card-body">
                             <ul class="list-group list-group-flush">
-                            <i class="fas fa-glasses fa-2x fa-fw"></i>
-                            <h5 class="card-title">Engineer</h5>
+                            <section class="row">
+                            <div class="col-sm-2">
+                                <i class="fas fa-glasses fa-2x fa-w"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <h5 class="card-title">Engineer</h5>
+                            </div>
+                            </section>
                             <li class="list-group-item bg-info">ID: ${id}</a>
                             <li class="list-group-item bg-info">Email: ${email}</a>
                             <li class="list-group-item bg-info">Github: ${github}</a>
@@ -46,11 +58,17 @@ const generateEmployeeCards = employeeArr => {
                 return `
                     <div class="col-sm-4">
                         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                            <div class="card-header">${name}</div>
+                            <div class="card-header font-weight-bold text-center">${name}</div>
                                 <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                <i class="fas fa-user-graduate fa-2x fa-fw"></i>
-                                <h5 class="card-title">Intern</h5>
+                                <section class="row">
+                                <div class="col-sm-2">
+                                    <i class="fas fa-user-graduate fa-2x fa-fw"></i>
+                                </div>
+                                <div class="col-sm-10">
+                                    <h5 class="card-title">Intern</h5>
+                                </div>
+                                </section>
                                 <li class="list-group-item bg-secondary">ID: ${id}</a>
                                 <li class="list-group-item bg-secondary">Email: ${email}</a>
                                 <li class="list-group-item bg-secondary">School: ${school}</a>
