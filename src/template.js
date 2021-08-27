@@ -1,5 +1,5 @@
 const generateManager = teamArr => {
-      return `
+    return `
         <div class="col-sm-4">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header">${teamArr.name}</div>
@@ -22,7 +22,7 @@ const generateEmployeeCards = employeeArr => {
           ${employeeArr
             .filter(({ role }) => role === "Engineer")
             .map(({ name, id, email, github }) => {
-              return `
+                return `
                 <div class="col-sm-4">
                     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
                         <div class="card-header">${name}</div>
@@ -38,11 +38,12 @@ const generateEmployeeCards = employeeArr => {
                     </div>
                 </div>
             `;
-            })}
+            })
+            .join('')}
             ${employeeArr
-                .filter(({ role }) => role === "Intern")
-                .map(({ name, id, email, school }) => {
-                  return `
+            .filter(({ role }) => role === "Intern")
+            .map(({ name, id, email, school }) => {
+                return `
                     <div class="col-sm-4">
                         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                             <div class="card-header">${name}</div>
@@ -57,13 +58,14 @@ const generateEmployeeCards = employeeArr => {
                         </div>
                     </div>
                 `;
-                })}
+            })
+            .join('')}
       `;
 };
 
 module.exports = templateData => {
 
-    const {teamArr} = templateData;
+    const { teamArr } = templateData;
 
     return `
     <!DOCTYPE html>
@@ -95,4 +97,4 @@ module.exports = templateData => {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </html>
     `;
-  };
+};
